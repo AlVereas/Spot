@@ -7,6 +7,6 @@ app.get("/inform", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(port, '195.57.144.136', () => {
+app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
