@@ -3,13 +3,13 @@ const app = express();
 const port = 3000;
 
 app.post("/", (req, res, next) => {
-  console.log(req.body);
+  console.log(req);
   res.send("Hello World!");
 });
 
 app.get("/", (req, res) => {
   console.log(req.body);
-  res.send("Hello <Get!");
+  res.send("Hello Get!");
 });
 
 app.listen(port, () => {
