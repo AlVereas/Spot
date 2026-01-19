@@ -7,6 +7,11 @@ app.post("/", (req, res, next) => {
   res.send("Hello World!");
 });
 
+app.get("/", (req, res) => {
+  console.log(req.body);
+  res.send("Hello <Get!");
+});
+
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
