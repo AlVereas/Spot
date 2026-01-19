@@ -1,9 +1,10 @@
-import express from "express";
+// import express from "express";
 import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
-app.use(bodyParser.json()); // for JSON data
-app.use(bodyParser.urlencoded({ extended: true })); // for URL-encoded data
+app.use(express.json());
+//app.use(bodyParser.json()); // for JSON data
+//app.use(bodyParser.urlencoded({ extended: true })); // for URL-encoded data
 
 app.post("/", (req, res, next) => {
   console.log(req.body);
