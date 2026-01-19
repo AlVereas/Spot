@@ -10,12 +10,12 @@ let code = "Hello";
 
 app.post("/", (req, res, next) => {
   console.log(req.body, next);
-  res.send("Hello World!");
+  res.send(code);
 });
 
 app.get("/", (req, res) => {
   console.log(req.body);
-  res.send("Hello Get!");
+  res.send(code);
 });
 
 app.listen(port, () => {
