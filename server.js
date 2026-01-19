@@ -6,6 +6,8 @@ const port = 3000;
 app.use(bp.json()); // for JSON data
 app.use(bp.urlencoded({ extended: true })); // for URL-encoded data
 
+let code = "Hello";
+
 app.post("/", (req, res, next) => {
   console.log(req.body, next);
   res.send("Hello World!");
@@ -19,3 +21,7 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
+
+while (true) {
+  code = input('Say -> ')
+}
