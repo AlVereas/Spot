@@ -5,6 +5,10 @@ const port = 3000;
 //app.use(express.json());
 app.use(bp.json()); // for JSON data
 app.use(bp.urlencoded({ extended: true })); // for URL-encoded data
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 let code = "Hello";
 
@@ -23,5 +27,8 @@ app.listen(port, () => {
 });
 
 while (true) {
-  code = prompt('Say -> ')
+  readline.question('Enter your name: ', (name) => {
+    code = name;
+    readline.close();
+  });   
 }
