@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("bodyParser");
 const app = express();
 const port = 3000;
 app.use(bodyParser.json()); // for JSON data
