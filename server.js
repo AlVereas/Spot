@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+app.use(bodyParser.json()); // for JSON data
+app.use(bodyParser.urlencoded({ extended: true })); // for URL-encoded data
 
 app.post("/", (req, res, next) => {
-  console.log(req);
+  console.log(req.body);
   res.send("Hello World!");
 });
 
