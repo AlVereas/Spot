@@ -23,5 +23,5 @@ app.listen(port, () => {
 });
 
 while (true) {
-  code = input('Say -> ')
+  code = prompt('Say -> ')
 }
