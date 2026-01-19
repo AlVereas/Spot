@@ -1,5 +1,5 @@
 const express = require("express");
-import bodyParser from body-parser;
+import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 app.use(bodyParser.json()); // for JSON data
