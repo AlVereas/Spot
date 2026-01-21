@@ -11,12 +11,16 @@ app.use(BodyParser.urlencoded({ extended: true })); // for URL-encoded data
 let code = "Hello";
 
 app.post("/", (req, res, next) => {
-  console.log(req.body, next);
+  if (req.body) {
+     console.log(req.body);
+  }
   res.send(code);
 });
 
 app.get("/", (req, res) => {
-  console.log(req.body);
+  if (req.body) {
+     console.log(req.body);
+  }
   res.send(code);
 });
 
@@ -24,13 +28,14 @@ app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
 
-const response = await inquirer.prompt([
-  {
-    type: 'input',
-    name: 'username',
-    message: 'What is your username?',
-  },
-]);
+while (true) {
+  const response = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'text',
+      message: 'Escribe aqui:',
+    },
+  ]);
 
-console.log(response.username);   
-code = response.username
+  code = response.text
+}
