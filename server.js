@@ -1,11 +1,11 @@
-const express = require('express')
-const bp = require('body-parser')
-const inquirer = require('inquirer')
+import express from 'express';
+import BodyParser from 'body-parser';
+import inquirer from 'inquirer';
 const app = express();
 const port = 3000;
 //app.use(express.json());
-app.use(bp.json()); // for JSON data
-app.use(bp.urlencoded({ extended: true })); // for URL-encoded data
+app.use(BodyParser.json()); // for JSON data
+app.use(BodyParser.urlencoded({ extended: true })); // for URL-encoded data
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
