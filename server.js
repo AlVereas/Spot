@@ -1,12 +1,13 @@
 import express from 'express';
 import BodyParser from 'body-parser';
 import inquirer from 'inquirer';
+import readline from 'readline';
 const app = express();
 const port = 3000;
 //app.use(express.json());
 app.use(BodyParser.json()); // for JSON data
 app.use(BodyParser.urlencoded({ extended: true })); // for URL-encoded data
-const readline = require('readline').createInterface({
+const readline = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
