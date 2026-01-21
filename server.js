@@ -1,5 +1,6 @@
 const express = require('express')
 const bp = require('body-parser')
+const inquirer = require('inquirer')
 const app = express();
 const port = 3000;
 //app.use(express.json());
@@ -26,9 +27,13 @@ app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
 
-while (true) {
-  readline.question('Enter your name: ', (name) => {
-    code = name;
-    readline.close();
-  });   
-}
+const response = await inquirer.prompt([
+  {
+    type: 'input',
+    name: 'username',
+    message: 'What is your username?',
+  },
+]);
+
+console.log(response.username);   
+code = response.username
